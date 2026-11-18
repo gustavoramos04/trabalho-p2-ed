@@ -1,0 +1,31 @@
+:root{--bg:#f6f7f9;--fg:#1d2433;--mut:#667085;--card:#fff;--bd:#d5d9e2;--acc:#1f6feb;--hi:#ffb703;--ok:#2a9d8f}
+@media(prefers-color-scheme:dark){:root{--bg:#12161f;--fg:#e8ecf3;--mut:#9aa4b5;--card:#1b2130;--bd:#30394d;--acc:#5b9bff;--hi:#e0a100;--ok:#3fbfae}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 Georgia,serif}
+header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--bd)}
+h1{margin:0;font-size:1.3rem}
+main{display:grid;grid-template-columns:1.4fr 1fr;gap:20px;padding:20px;max-width:1100px;margin:auto}
+@media(max-width:800px){main{grid-template-columns:1fr}}
+.views,aside{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:14px}
+svg{width:100%;height:auto}
+svg line{stroke:var(--bd);stroke-width:2}
+svg circle{fill:var(--card);stroke:var(--acc);stroke-width:2;transition:fill .25s}
+svg circle.hi{fill:var(--hi)}
+svg text{fill:var(--fg);text-anchor:middle;dominant-baseline:central;font:600 15px system-ui}
+#array{display:flex;flex-wrap:wrap;gap:4px}
+.cel{width:42px;text-align:center;border:1px solid var(--bd);border-radius:6px;padding:4px 0;font:600 15px system-ui;transition:background .25s}
+.cel small{display:block;color:var(--mut);font-weight:400;font-size:11px}
+.cel.hi{background:var(--hi);color:#000}
+.dica{color:var(--mut);font-size:.85rem;margin:10px 0 0}
+.metricas{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;text-align:center;font-size:.75rem;color:var(--mut)}
+.metricas b{display:block;font:700 1.5rem system-ui;color:var(--fg)}
+#msg{min-height:3em;margin:10px 0;padding:8px 10px;border-left:4px solid var(--acc);background:var(--bg)}
+.ctl{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+button,input{font:600 14px system-ui;padding:8px 12px;border:1px solid var(--bd);border-radius:6px;background:var(--card);color:var(--fg)}
+button{cursor:pointer}
+button:hover{border-color:var(--acc)}
+button:focus-visible,input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+input{width:90px}
+.seg button{border-radius:0}
+.seg button.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+#log{margin:8px 0 0;padding-left:20px;font-size:.85rem;color:var(--mut);max-height:150px;overflow:auto}
