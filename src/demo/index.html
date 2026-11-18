@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulador de Heap</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>Simulador de Heap binário</h1>
+  <div class="seg" id="modo">
+    <button data-m="min" class="on">Min-Heap</button>
+    <button data-m="max">Max-Heap</button>
+  </div>
+</header>
+<main>
+  <section class="views">
+    <svg id="arvore" viewBox="0 0 600 250" aria-label="Árvore binária"></svg>
+    <div id="array" aria-label="Array subjacente"></div>
+    <p class="dica">Relação de índices: pai = (i-1)//2 · esquerdo = 2i+1 · direito = 2i+2</p>
+  </section>
+  <aside>
+    <div class="metricas">
+      <div><b id="mCmp">0</b>comparações</div>
+      <div><b id="mSwp">0</b>trocas</div>
+      <div><b id="mTam">0</b>tamanho</div>
+      <div><b id="mPend">0</b>passos na fila</div>
+    </div>
+    <p id="msg" aria-live="polite">Carregue um cenário ou insira um valor.</p>
+    <div class="ctl">
+      <button id="bPlay">Executar</button>
+      <button id="bPause">Pausar</button>
+      <button id="bStep">Próximo passo</button>
+      <button id="bReset">Reiniciar</button>
+    </div>
+    <div class="ctl">
+      <button id="cMedio">Caso médio</button>
+      <button id="cPior">Pior caso</button>
+    </div>
+    <div class="ctl">
+      <input id="valor" type="number" placeholder="valor">
+      <button id="bIns">Inserir</button>
+      <button id="bExt">Extrair raiz</button>
+      <button id="bPeek">Peek</button>
+    </div>
+    <ol id="log"></ol>
+  </aside>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
